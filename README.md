@@ -9,7 +9,19 @@ Create DB
 ```sh
 createdb -O user_user bellintegrator_test_db
 ```
+OR
+Create configuration file for your local db connection. You could create `config/local.json` file or change `config/base.json`:
+```json
+{
+  "db": {
+    "host": "host",
+    "username": "user",
+    "password": "password"
+  }
+}
+```
 
+Insall dependencies and compile ts:
 ```sh
 yarn install --pure-lockfile
 yarn compile
