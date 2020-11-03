@@ -1,12 +1,21 @@
 import './bootstrap';
-import { initContainer } from 'components/di';
+import { buildSchema } from 'type-graphql';
+import { ApolloServer } from 'apollo-server';
 
-import Container from 'typedi';
-import { Type } from 'components/container/Type';
-import { AuthorRepository } from 'inf/AuthorRepository';
+import { initContainer } from 'components/di';
+import { schemaConfig } from 'application/gql';
+import { ServerConfig } from '@config';
+
 
 initContainer().then(async() => {
-  const repository = Container.get<AuthorRepository>(Type.AuthorRepository);
-  const data = await repository.find();
-  console.log(data);
+  const { host, port } = ServerConfig;
+  const gqlSchema = await buildSchema(schemaConfig);
+
+  const server = new ApolloServer({
+    schema: gqlSchema,
+    playground: true
+  })
+
+  const { url } = await server.listen({ host, port });
+  console.log(`Server is running, GraphQL Playground available at ${url}`);
 });
