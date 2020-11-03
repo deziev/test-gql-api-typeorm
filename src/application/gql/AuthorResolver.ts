@@ -32,7 +32,7 @@ class AuthorResolver {
     const author = plainToClass(Author, newAuthorData);
     const sameNameAuthor = await this.authorRespository.findOne({ name: author.name });
     if (sameNameAuthor) {
-      throw new Error(`Author with name: ${author.name} already exists`);
+      throw new Error(`Author with name: ${author.name} already exists!`);
     }
     return await this.authorRespository.save(author);
   }

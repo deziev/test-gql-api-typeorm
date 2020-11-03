@@ -34,6 +34,10 @@ class BookResolver {
   public async addBook(@Arg('newBookData') newBookData: AddBookInput) {
     await this.authorRespository.findOneOrFail(newBookData.authorId);
     const book = plainToClass(Book, newBookData);
+    const sameNameBook = await this.bookRepository.findOne({ name: book.name });
+    if (sameNameBook) {
+      throw new Error(`Book with name: ${book.name} already exists!`);
+    }
     return await this.bookRepository.save(book);
   }
 
