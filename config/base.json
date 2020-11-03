@@ -1,7 +1,7 @@
 {
   "db": {
     "host": "localhost",
-    "database": "bellintegrator_test_db"
+    "database": "theproject_test_db"
   },
   "server": {
     "host": "localhost",

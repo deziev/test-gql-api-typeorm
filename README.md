@@ -7,7 +7,7 @@
 ### Installation
 Create DB
 ```sh
-createdb -O user_user bellintegrator_test_db
+createdb -O user_user theproject_test_db
 ```
 OR
 Create configuration file for your local db connection. You could create `config/local.json` file or change `config/base.json`:

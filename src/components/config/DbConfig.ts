@@ -18,7 +18,7 @@ export const DbConfig: TDbConfig = {
   type: 'postgres',
   logging: 'all',
   host: 'localhost',
-  database: 'bellintegrator_test_db',
+  database: 'theproject_test_db',
   username: 'user_user',
   password: '123qwe',
   cli: {
