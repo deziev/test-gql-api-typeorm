@@ -29,8 +29,15 @@ yarn migration:run
 ```
 
 ### Usage
+Starts server on `http://localhost:3000` by default
 ```sh
 yarn start
+```
+
+### Scripts
+Upload test data to db
+```
+yarn fixture:author
 ```
 
 Run in DEV mode
