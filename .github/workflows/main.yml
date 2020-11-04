@@ -23,7 +23,7 @@ jobs:
           npm run compile
 
       - name: Run linter
-        run: npm tslint
+        run: npm run tslint
 
       - name: Run tests
-        run: npm test
+        run: npm run test
