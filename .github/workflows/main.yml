@@ -9,21 +9,21 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     strategy:
       matrix:
         node-version: [12.x]
 
     steps:
       - uses: actions/checkout@v2
-        
+
       - name: Install deps and compile ts
         run: |
           npm install
-          npm compile
-          
+          npm run compile
+
       - name: Run linter
         run: npm tslint
-        
+
       - name: Run tests
         run: npm test
