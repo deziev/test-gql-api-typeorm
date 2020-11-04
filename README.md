@@ -36,8 +36,13 @@ yarn start
 
 ### Scripts
 Upload test data to db
-```
+```sh
 yarn fixture:author
+```
+
+Run integration tests. Starts app with stub db connection
+```sh
+yarn test
 ```
 
 Run in DEV mode
