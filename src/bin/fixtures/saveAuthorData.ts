@@ -11,7 +11,7 @@ export const saveAuthorData = async (
   authorRepository: AuthorRepository,
   bookRepository: BookRepository
 ) => {
-  const author = plainToClass(Author, data);
+  const author = plainToClass(Author, { name: data.name });
   await authorRepository.save(author);
   await Promise.all(
     data.books
